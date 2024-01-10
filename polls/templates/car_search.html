@@ -1,0 +1,129 @@
+<!-- polls/templates/polls/car_search.html -->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Search</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Search">
+</form>
+
+{% if cars %}
+    <h2>Filtered Results:</h2>
+    <ul>
+        {% for car in cars %}
+            <li>
+                <strong>Marque:</strong> {{ car.marque }}, 
+                <strong>Modele:</strong> {{ car.modele }}, 
+                <strong>Annee:</strong> {{ car.annee }},
+                <strong>Price:</strong> {{ car.price }}
+                {% if car.car_image %}
+                    <img src="{{ car.car_image.url }}" alt="{{ car.marque }} {{ car.modele }} Image">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{ message }}</p>
+{% endif %}
+
+</body>
+</html>-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Search</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="filter-section">
+            <h2>Filter</h2>
+            <form method="post" class="filter-form">
+                {% csrf_token %}
+                {{ form.marque }}
+                {{ form.modele }}
+                {{ form.annee }}
+                {{ form.price }}
+                <input type="submit" value="Search" class="search-button">
+            </form>
+        </div>
+        <div class="cars-list-section">
+            <h2>Cars List:</h2>
+            <div class="cars-grid">
+                {% for car in cars %}
+                    <div class="car-card">
+                        
+                        <img src="{{ car.car_image.url }}" alt="{{ car.marque }} {{ car.modele }} Image">
+                        <p class="car-name">{{ car.marque }} {{ car.modele }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>-->
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+<body>
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <h2>Filter</h2>
+            <form method="post" class="filter-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Search" class="search-button">
+            </form>
+        </div>
+
+        <!-- Car List Section -->
+        <div class="car-list-section">
+            <h1>Car List</h1>
+            <div class="car-list">
+                {% if cars %}
+                    {% for car in cars %}
+                        <div class="car-item">
+                            {% if car.car_image %}
+                                <img src="{{ car.car_image.url }}" alt="{{ car.marque }} {{ car.modele }}" class="car-image">
+                            {% else %}
+                                <div class="no-image">No image available</div>
+                            {% endif %}
+                            <div class="car-details">
+                                <h3>{{ car.marque }} {{ car.modele }}</h3>
+                                <p><strong>Année:</strong> {{ car.annee }}</p>
+                                <p><strong>Prix:</strong> {{ car.price }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="no-cars">No cars found in the list.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Your scripts here if any -->
+</body>
+</html>

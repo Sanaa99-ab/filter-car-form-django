@@ -1,0 +1,52 @@
+/* styles.css */
+
+/* Style for the entire body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+/* Style for the heading */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Style for the car list */
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Style for each car item */
+.car-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the car image */
+.car-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style for the car details */
+.car-item h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+/* Style for the details paragraphs */
+.car-item p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}

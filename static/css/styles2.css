@@ -1,0 +1,186 @@
+/* static/css/styles2.css */
+
+/* Styles for the form */
+/*
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Styles for the list of cars 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+li img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+}
+*/
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.filter-section {
+    /*flex-basis: 25%;*/
+    width: 250px; /* Fixed width for the filter section */
+    flex-shrink: 0;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-form input,
+.filter-form select {
+    display: block; /* This makes the label take up its own line */
+    margin-bottom: .5em;
+    /*margin-bottom: 15px;*/
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: #f68c0a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.cars-list-section {
+    /*flex-basis: 75%;*/
+    
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.car-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.car-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.car-name {
+    font-weight: bold;
+}
+
+/* Include the previous styles here */
+
+/* Styles for car list */
+.car-list-section {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.car-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.car-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: #eee;
+    margin-bottom: 15px;
+}
+
+.car-details h3 {
+    margin: 0;
+    color: #333;
+}
+
+.car-details p {
+    color: #666;
+}
+
+.no-cars {
+    text-align: center;
+    padding: 20px;
+}

@@ -1,0 +1,25 @@
+/* Example CSS for the car list */
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.car-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling specific elements within the car-item */
+.car-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.car-item p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}

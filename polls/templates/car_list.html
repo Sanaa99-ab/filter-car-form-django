@@ -1,0 +1,35 @@
+<!-- polls/templates/polls/car_list.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+    <!-- Link your CSS file here -->
+    <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
+</head>
+<body>
+    <h1>Car List</h1>
+
+    {% if cars %}
+        <div class="car-list">
+            {% for car in cars %}
+                <div class="car-item">
+                    <h1>{{ car.image.url }}</h1>
+                    {% if car.car_image %}
+                        <img src="{{ car.car_image.url }}" alt="{{ car.marque }} {{ car.modele }}">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
+                    <h3>{{ car.marque }} {{ car.modele }}</h3>
+                    <p><strong>Année:</strong> {{ car.annee }}</p>
+                    <p><strong>Prix:</strong> {{ car.price }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No cars found in the list.</p>
+    {% endif %}
+</body>
+</html>
+
